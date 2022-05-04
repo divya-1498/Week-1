@@ -1,0 +1,13 @@
+% Read in the image
+
+img = imread("DetectingEdgesSlide.png");
+img_gray = im2gray(img);
+BW = imbinarize(img_gray, 0.77);
+BW = ~BW;
+imgFilt = imgaussfilt(img_gray, 0.5);
+imgEdges = edge(imgFilt, "sobel", "nothinning");
+imshow(imgEdges);
+newBW = imbinarize(imgEdges,'adaptive');
+
+% Uncomment below to Display
+imshow(imerode(newBW,strel("disk",3)))
