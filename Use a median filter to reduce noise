@@ -1,0 +1,9 @@
+#This is a part of the ungraded assessment of Image segmentation, filtering and region analysis course by Mathworks on Coursera platform 
+
+% Load in the noisy image
+img = imread("coinsNoisy.jpg");
+% Insert code here to filter and display the image
+imgMed = medfilt2(img, [3 3]);
+imshow(imgMed)
+% Uncomment the line below to display the results
+montage({img,imgMed}) 
